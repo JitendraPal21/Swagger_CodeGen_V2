@@ -15,10 +15,14 @@ public class LibraryController implements LibraryApi {
     @Override
     public ResponseEntity<List<Book>> getAllBooksInLibrary() {
         List<Book> list=new ArrayList<>();
-        Book book=new Book();
-        book.setName("OneBook");
-        book.setAuthor("OneAuthor");
-        list.add(book);
+        Book book1=new Book();
+        book1.setName("OneBook");
+        book1.setAuthor("OneAuthor");
+        Book book2=new Book();
+        book2.setName("OneBook");
+        book2.setAuthor("OneAuthor");
+        list.add(book1);
+        list.add(book2);
 
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
