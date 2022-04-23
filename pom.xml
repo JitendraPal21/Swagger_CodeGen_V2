@@ -49,6 +49,7 @@
 			<version>2.13.2</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.threeten/threeten-extra -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -82,14 +83,17 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.basedir}/src/main/resources/third-party-api.yaml</inputSpec>
+							<inputSpec>${project.basedir}/src/main/resources/swagger_pet.yaml</inputSpec>
 							<language>spring</language>
 							<output>${project.build.directory}/generated-sources/</output>
 							<generateSupportingFiles>false</generateSupportingFiles>
 							<apiPackage>com.solmart.swagger_codegen_v2.api</apiPackage>
 							<modelPackage>com.solmart.swagger_codegen_v2.models</modelPackage>
+							<invokerPackage>com.solmart.swagger_codegen_v2.handler</invokerPackage>
 							<configOptions>
 								<interfaceOnly>true</interfaceOnly>
+								<dateLibrary>java11</dateLibrary>
+								<java8>false</java8>
 							</configOptions>
 						</configuration>
 					</execution>
