@@ -1,0 +1,45 @@
+openapi: 3.0.0
+
+info:
+  version: 0.0.1
+  title: Library Service
+
+
+tags:
+  - name: "library"
+
+paths:
+  /library/books:
+    get:
+      tags:
+        - "library"
+      summary: "Add a new book to the store"
+      description: "this is description"
+      operationId: "getAllBooksInLibrary"
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Book"
+        "400":
+          description: "Invalid status value"
+
+components:
+  schemas:
+    Book:
+      description: This is book model
+      type: object
+      properties:
+        name:
+          description: the name of book
+          type: string
+        author:
+          description: the name of book author
+          type: string
+
+
+
